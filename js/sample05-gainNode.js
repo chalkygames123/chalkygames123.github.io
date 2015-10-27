@@ -1,4 +1,4 @@
-(function () {
+! function () {
 
 	var onDOMContentLoaded = function () {
 
@@ -31,7 +31,7 @@
 
 		function documentOnKeyPressListener(e) {
 			var keyCode = event.keyCode || e.which;
-			if (keyCode == 13) {
+			if (keyCode == KeyCode.ENTER) {
 				oscillatorButtonOnClickListener();
 			}
 			e.preventDefault();
@@ -54,14 +54,14 @@
 				oscillator.start(0);
 
 				isStop = false;
-
-				this.innerHTML = '<i class="fa fa-stop"></i>';
 			} else {
 				oscillator.stop(0);
 
 				isStop = true;
-				this.innerHTML = '<i class="fa fa-play"></i>';
 			}
+
+			document.querySelector('.play-button').firstChild.classList.toggle("fa-play");
+			document.querySelector('.play-button').firstChild.classList.toggle("fa-stop");
 		}
 
 		function volumeOnInputListener() {
@@ -78,7 +78,6 @@
 			for (var i = 0, len = this.elements['radio-wave-type'].length; i < len; i++) {
 				if (this.elements['radio-wave-type'][i].checked) {
 					oscillator.type = type = (typeof oscillator.type === 'string') ? this.elements['radio-wave-type'][i].value : i;
-					console.log(this.elements['radio-wave-type'][i].value);
 					break;
 				}
 			}
@@ -111,18 +110,20 @@
 		document.addEventListener('DOMContentLoaded', onDOMContentLoaded, true);
 	}
 
-})();
+}();
 
 // 空のメソッド "EventWrapper" をつくる
 function EventWrapper() {}
-// 空のメソッド "EventWrapper" に
-(function () {
+// 空のメソッド "EventWrapper" の各プロパティに
+// デバイスに応じたイベントタイプ名を設定する
+! function () {
 	var click = '';
 	var start = '';
 	var move = '';
 	var end = '';
 
 	// Touch Panel ?
+	// スラッシュに囲まれた文字列は正規表現リテラルを表す
 	if (/iPhone|iPad|iPod|Android/.test(navigator.userAgent)) {
 		click = 'click';
 		start = 'touchstart';
@@ -139,4 +140,12 @@ function EventWrapper() {}
 	EventWrapper.START = start;
 	EventWrapper.MOVE = move;
 	EventWrapper.END = end;
-})();
+}();
+
+function KeyCode() {}
+
+! function () {
+	var enter = 13;
+
+	KeyCode.ENTER = 13;
+}();

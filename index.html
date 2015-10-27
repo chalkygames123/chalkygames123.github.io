@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+	<meta name="viewport" content="width=device-width">
 	<title>WEB SOUNDER のサンプルを試してみる</title>
 	<link rel="stylesheet" href="css/sanitize.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -14,16 +14,23 @@
 
 	<div class="container">
 		<h1>Web Audio API をさわってみる</h1>
+		
+		<ul>
+			<li>List Item 1</li>
+			<li>List Item 2</li>
+			<li>List Item 3</li>
+		</ul>
 
 		<div>
-			<h2>Oscillator を起動/停止</h2>
+			<h2>Oscillator を起動/停止 (ショートカットキー: Enter)</h2>
 			<button class="play-button"><i class="fa fa-play"></i></button>
 		</div>
 
 		<div>
 			<h2>Oscillator の Gain を変更</h2>
 			<div>
-				<input type="range" class="range-volume" value="1" min="0" max="1" step="0.05"> 現在値: <output class="current-volume">0</output>
+				<input type="range" class="range-volume" value="1" min="0" max="1" step="0.05">現在値:
+				<output class="current-volume">0</output>
 			</div>
 		</div>
 
@@ -32,16 +39,16 @@
 			<div>
 				<form class="form-wave-type">
 					<label>
-						<input type="radio" name="radio-wave-type" value="sine" checked> SINE
+						<input type="radio" name="radio-wave-type" value="sine" checked>SINE
 					</label>
 					<label>
-						<input type="radio" name="radio-wave-type" value="square"> SQUARE
+						<input type="radio" name="radio-wave-type" value="square">SQUARE
 					</label>
 					<label>
-						<input type="radio" name="radio-wave-type" value="sawtooth"> SAW
+						<input type="radio" name="radio-wave-type" value="sawtooth">SAWTOOTH
 					</label>
 					<label>
-						<input type="radio" name="radio-wave-type" value="triangle"> TRIANGLE
+						<input type="radio" name="radio-wave-type" value="triangle">TRIANGLE
 					</label>
 				</form>
 			</div>
@@ -50,14 +57,16 @@
 		<div>
 			<h2>Oscillator の Frequency を変更</h2>
 			<div>
-				<input type="range" class="range-frequency" value="440" min="20" max="100000" step="5"> 現在値: <output class="current-frequency">0</output>
+				<input type="range" class="range-frequency" value="440" min="20" max="100000" step="5">現在値:
+				<output class="current-frequency">0</output>
 			</div>
 		</div>
 
 		<div>
 			<h2>Oscillator の Detune を変更</h2>
 			<div>
-				<input type="range" class="range-detune" value="0" min="-100" max="100" step="5"> 現在値: <output class="current-detune">0</output>
+				<input type="range" class="range-detune" value="0" min="-100" max="100" step="5">現在値:
+				<output class="current-detune">0</output>
 			</div>
 		</div>
 	</div>
