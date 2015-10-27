@@ -1,0 +1,25 @@
+.container {
+	padding: 1rem;
+}
+
+.container > div {
+	margin: 2rem 0;
+}
+
+.play-button {
+	color: white;
+	font-size: 1rem;
+	background-color: salmon;
+	display: block;
+	width: 8rem;
+	height: 3rem;
+	border: none;
+	margin: 1rem auto;
+	border-radius: 3px;
+	box-shadow: 0px 3px 10px gray;
+}
+
+input[class^="range-"] {
+	display: block;
+	margin: 0 auto;
+}
