@@ -10,7 +10,7 @@
 
 .container > div > div {
 	display: table;
-	margin: 0 auto;
+/*	margin: 0 auto;*/
 }
 
 .play-button {
@@ -28,6 +28,7 @@
 
 input[class^="range-"] {
 	display: block;
+	height: 2rem;
 	margin: 0 auto;
 }
 
