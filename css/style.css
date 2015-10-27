@@ -1,9 +1,16 @@
 .container {
+	max-width: 800px;
 	padding: 1rem;
+	margin: 0 auto;
 }
 
 .container > div {
 	margin: 2rem 0;
+}
+
+.container > div > div {
+	display: table;
+	margin: 0 auto;
 }
 
 .play-button {
@@ -22,4 +29,8 @@
 input[class^="range-"] {
 	display: block;
 	margin: 0 auto;
+}
+
+.form-wave-type > label {
+	display: block;
 }
