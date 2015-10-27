@@ -31,7 +31,7 @@
 
 		function documentOnKeyPressListener(e) {
 			var keyCode = event.keyCode || e.which;
-			if (keyCode == KeyCode.ENTER) {
+			if (keyCode == KeyCode.ENTER || keyCode == KeyCode.SPACE) {
 				oscillatorButtonOnClickListener();
 			}
 			e.preventDefault();
@@ -145,7 +145,6 @@ function EventWrapper() {}
 function KeyCode() {}
 
 ! function () {
-	var enter = 13;
-
 	KeyCode.ENTER = 13;
+	KeyCode.SPACE = 32;
 }();
