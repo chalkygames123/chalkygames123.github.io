@@ -145,6 +145,12 @@ function EventWrapper() {}
 function KeyCode() {}
 
 ! function () {
+<<<<<<< HEAD
 	KeyCode.ENTER = 13;
 	KeyCode.SPACE = 32;
+=======
+	var enter = 13;
+
+	KeyCode.ENTER = 13;
+>>>>>>> a50d8f527c255425705b2f3397284d1ee34aa86a
 }();
