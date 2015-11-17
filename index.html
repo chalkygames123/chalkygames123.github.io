@@ -5,9 +5,9 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<title>WEB SOUNDER のサンプルを試してみる</title>
-	<link rel="stylesheet" href="css/sanitize.css">
+	<link rel="stylesheet" href="vendors/css/sanitize.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="vendors/font-awesome-4.4.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -23,8 +23,8 @@
 		<div>
 			<h2>Oscillator の Gain を変更</h2>
 			<div>
-				<input type="range" class="range-volume" value="1" min="0" max="1" step="0.05">現在値:
-				<output class="current-volume">0</output>
+				<input type="range" class="range-volume" value="0.75" min="0" max="1" step="0.05">現在値:
+				<output class="current-volume"></output>
 			</div>
 		</div>
 
@@ -51,8 +51,8 @@
 		<div>
 			<h2>Oscillator の Frequency を変更</h2>
 			<div>
-				<input type="range" class="range-frequency" value="440" min="20" max="100000" step="5">現在値:
-				<output class="current-frequency">0</output>
+				<input type="range" class="range-frequency" name="range-frequency" value="440" min="0" max="15000" step="5">現在値:
+				<output class="current-frequency"></output>
 			</div>
 		</div>
 
@@ -60,12 +60,12 @@
 			<h2>Oscillator の Detune を変更</h2>
 			<div>
 				<input type="range" class="range-detune" value="0" min="-100" max="100" step="5">現在値:
-				<output class="current-detune">0</output>
+				<output class="current-detune"></output>
 			</div>
 		</div>
 	</div>
 
-	<script src="js/sample05-gainNode.js"></script>
+	<script src="js/script.js"></script>
 
 </body>
 

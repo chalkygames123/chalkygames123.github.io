@@ -10,11 +10,22 @@
 			window.alert(error.message + ' : Please use Chrome or Safari');
 			return;
 		}
+		
+		document.querySelector('.current-volume').textContent = document.querySelector('.range-volume').value;
+		document.querySelector('.current-frequency').textContent = document.querySelector('.range-frequency').value;
+		document.querySelector('.current-detune').textContent = document.querySelector('.range-detune').value;
 
 		var oscillator = context.createOscillator();
-		var type = oscillator.type;
-		var frequency = oscillator.frequency.value;
-		var detune = oscillator.detune.value;
+		var type;
+		var formWaveType = document.querySelector('.form-wave-type');
+		for (var i = 0, len = formWaveType.elements['radio-wave-type'].length; i < len; i++) {
+			if (formWaveType.elements['radio-wave-type'][i].checked) {
+				type = (typeof oscillator.type === 'string') ? formWaveType.elements['radio-wave-type'][i].value : i;
+				break;
+			}
+		}
+		var frequency = document.querySelector('.current-frequency').textContent;
+		var detune = document.querySelector('.current-detune').textContent;
 
 		context.createGain = context.createGain || context.createGainNode;
 
@@ -33,8 +44,8 @@
 			var keyCode = event.keyCode || e.which;
 			if (keyCode == KeyCode.ENTER || keyCode == KeyCode.SPACE) {
 				oscillatorButtonOnClickListener();
+				e.preventDefault();
 			}
-			e.preventDefault();
 		}
 
 		function oscillatorButtonOnClickListener() {
@@ -85,7 +96,7 @@
 
 		function frequencyOnInputListener() {
 			var min = oscillator.frequency.minValue || 0;
-			var max = oscillator.frequency.maxValue || 100000;
+			var max = oscillator.frequency.maxValue || 15000;
 
 			if ((min <= this.valueAsNumber) && (this.valueAsNumber <= max)) {
 				oscillator.frequency.value = frequency = this.valueAsNumber;
@@ -94,8 +105,8 @@
 		}
 
 		function detuneOnInputListener() {
-			var min = oscillator.detune.minValue || -4800;
-			var max = oscillator.detune.maxValue || 4800;
+			var min = oscillator.detune.minValue || -100;
+			var max = oscillator.detune.maxValue || 100;
 
 			if ((min <= this.valueAsNumber) && (this.valueAsNumber <= max)) {
 				oscillator.detune.value = detune = this.valueAsNumber;
