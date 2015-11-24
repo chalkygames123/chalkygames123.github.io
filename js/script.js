@@ -10,7 +10,7 @@
 			window.alert(error.message + ' : Please use Chrome or Safari');
 			return;
 		}
-		
+
 		document.querySelector('.current-volume').textContent = document.querySelector('.range-volume').value;
 		document.querySelector('.current-frequency').textContent = document.querySelector('.range-frequency').value;
 		document.querySelector('.current-detune').textContent = document.querySelector('.range-detune').value;
@@ -30,6 +30,10 @@
 		context.createGain = context.createGain || context.createGainNode;
 
 		var gain = context.createGain();
+		
+		context.createDelay = context.createDelay || context.createDelayNode;
+		
+		
 
 		var isStop = true;
 
@@ -38,13 +42,14 @@
 		document.querySelector('.form-wave-type').addEventListener('change', waveTypeOnChangeListener, false);
 		document.querySelector('.range-frequency').addEventListener('input', frequencyOnInputListener, false);
 		document.querySelector('.range-detune').addEventListener('input', detuneOnInputListener, false);
-		window.addEventListener('keypress', documentOnKeyPressListener, false);
+		window.addEventListener('keydown', documentOnKeyPressListener, false);
 
 		function documentOnKeyPressListener(e) {
-			var keyCode = event.keyCode || e.which;
-			if (keyCode == KeyCode.ENTER || keyCode == KeyCode.SPACE) {
-				oscillatorButtonOnClickListener();
-				e.preventDefault();
+			var key = event.keyCode || e.which;
+			switch (key) {
+				case KeyCode.ENTER:
+					oscillatorButtonOnClickListener();
+					break;
 			}
 		}
 
@@ -95,8 +100,8 @@
 		}
 
 		function frequencyOnInputListener() {
-			var min = oscillator.frequency.minValue || 0;
-			var max = oscillator.frequency.maxValue || 15000;
+			var min = oscillator.frequency.minValue || 20;
+			var max = oscillator.frequency.maxValue || 20000;
 
 			if ((min <= this.valueAsNumber) && (this.valueAsNumber <= max)) {
 				oscillator.frequency.value = frequency = this.valueAsNumber;
@@ -105,8 +110,8 @@
 		}
 
 		function detuneOnInputListener() {
-			var min = oscillator.detune.minValue || -100;
-			var max = oscillator.detune.maxValue || 100;
+			var min = oscillator.detune.minValue || -4800;
+			var max = oscillator.detune.maxValue || 4800;
 
 			if ((min <= this.valueAsNumber) && (this.valueAsNumber <= max)) {
 				oscillator.detune.value = detune = this.valueAsNumber;
@@ -125,9 +130,9 @@
 
 // 空のメソッド "EventWrapper" をつくる
 function EventWrapper() {}
-// 空のメソッド "EventWrapper" の各プロパティに
+// "EventWrapper" 内の各変数に
 // デバイスに応じたイベントタイプ名を設定する
-! function () {
+!function () {
 	var click = '';
 	var start = '';
 	var move = '';
@@ -154,8 +159,6 @@ function EventWrapper() {}
 }();
 
 function KeyCode() {}
-
 ! function () {
 	KeyCode.ENTER = 13;
-	KeyCode.SPACE = 32;
 }();
