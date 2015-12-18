@@ -21,34 +21,34 @@
 				<h2>Oscillator を起動/停止 <u>(Enter)</u></h2>
 				<button class="play-button"><i class="fa fa-play"></i></button>
 
-				<h2>Oscillator の Gain<u>(G)</u></h2>
+				<h2>Oscillator の Gain <u>(G)</u></h2>
 				<label accesskey="g"><input type="range" class="range-volume" value="0.5" min="0" max="1" step="0.05"></label>
 				<p>現在値: <output class="current-volume"></output></p>
 
 				<h2>Oscillator の WaveType</h2>
 				<form class="form-wave-type" action="">
-					<label accesskey="s"><input type="radio" name="radio-wave-type" value="sine" checked>SINE<u>(S)</u></label>
-					<label accesskey="q"><input type="radio" name="radio-wave-type" value="square">SQUARE<u>(Q)</u></label>
-					<label accesskey="a"><input type="radio" name="radio-wave-type" value="sawtooth">SAWTOOTH<u>(A)</u></label>
-					<label accesskey="t"><input type="radio" name="radio-wave-type" value="triangle">TRIANGLE<u>(T)</u></label>
+					<label accesskey="s"><input type="radio" name="radio-wave-type" value="sine" checked>SINE <u>(S)</u></label>
+					<label accesskey="q"><input type="radio" name="radio-wave-type" value="square">SQUARE <u>(Q)</u></label>
+					<label accesskey="a"><input type="radio" name="radio-wave-type" value="sawtooth">SAWTOOTH <u>(A)</u></label>
+					<label accesskey="t"><input type="radio" name="radio-wave-type" value="triangle">TRIANGLE <u>(T)</u></label>
 				</form>
 
-				<h2>Oscillator の Frequency<u>(F)</u></h2>
+				<h2>Oscillator の Frequency <u>(F)</u></h2>
 				<label accesskey="f"><input type="range" class="range-frequency" name="range-frequency" value="440" min="20" max="20000" step="1"></label>
 				<p>現在値: <output class="current-frequency"></output> Hz</p>
 				<p>波が 1 秒間に何回発生するかを表す値（単位: Hz）。</p>
-				<p>人間の可聴域は 20 - 20000 Hz。</p>
-				<p>88 鍵ピアノの音域は 27.5 Hz - 4186 Hz。</p>
+				<p>人間の可聴域は 20 ~ 20000 Hz。</p>
+				<p>88 鍵ピアノの音域は 27.5 Hz ~ 4186 Hz。</p>
 				<p>周波数が 2 倍になることは、オクターブが 1 上がることと同義。</p>
-				<p>frequency プロパティの取りうる値の範囲は 0 - 100000 Hz。</p>
+				<p>frequency プロパティの取りうる値の範囲は 0 ~ 100000 Hz。</p>
 
-				<h2>Oscillator の Detune<u>(D)</u></h2>
+				<h2>Oscillator の Detune <u>(D)</u></h2>
 				<label accesskey="d"><input type="range" class="range-detune" value="0" min="-4800" max="4800" step="100"></label>
 				<p>現在値: <output class="current-detune"></output> cent</p>
 				<p>1 オクターブの音程を 1200 等分した値（単位: cent）。</p>
 				<p>detune プロパティは、音楽的な視点で音の高さを変更する。たとえば、半音よりも小さい範囲で音の高さを調整したり、オクターブ違いの音を生成・合成したりする。シンセサイザーのファインチューン機能や、エフェクターの一種であるオクターバーを実現するためにあるといえる。</p>
 				<p>cent が 100 上がることは、ピアノの鍵盤における鍵ひとつ分音の高さが上がることと同義。</p>
-				<p>detune プロパティの取りうる値の範囲は -4800 - 4800 Hz。</p>
+				<p>detune プロパティの取りうる値の範囲は -4800 ~ 4800 Hz。</p>
 			</div><!-- .col-md-12 -->
 		</div><!-- .row-fluid -->
 	</div><!-- .container-fluid -->

@@ -16,8 +16,16 @@ body {
 	box-shadow: 0px 3px 10px gray;
 }
 
-input[class^="range-"] {
-	height: 40px;
+.form-wave-type label {
+	height: 30px;
+}
+
+input[type="range"] {
+	height: 30px;
+}
+
+input[type="radio"] {
+	margin-right: 10px;
 }
 
 output {
